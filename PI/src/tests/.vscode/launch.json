@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - MovingSpriteEx",
+            "request": "launch",
+            "mainClass": "tests.MovingSpriteEx"
+        }
+    ]
+}
