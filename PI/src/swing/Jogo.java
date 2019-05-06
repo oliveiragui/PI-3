@@ -18,6 +18,7 @@ public class Jogo extends JPanel implements ActionListener {
     private boolean jogoAtivo; // variável de controle para game Loop
     private Player player;
     private final int DELAY = 10;
+    private TileSet tileSet;
 
 
     public Jogo(){
@@ -32,6 +33,8 @@ public class Jogo extends JPanel implements ActionListener {
         setFocusable(true);
 
         player = new Player(ICRAFT_X, ICRAFT_Y);
+
+        tileSet = new TileSet(1, 1, 10);
 
         timer = new Timer(DELAY, this);
         timer.start();
@@ -52,6 +55,13 @@ public class Jogo extends JPanel implements ActionListener {
 
         g2d.drawImage(player.getImage(), player.getX(),
                 player.getY(), this);
+
+
+
+        for (int i = 0; i <= tileSet.getRepeat(); i++) {
+            g2d.drawImage(tileSet.getImage(), (int) (tileSet.getX() + ((i*10) * 3.5)),
+                    tileSet.getY() , this);
+        }
 
         List<Missile> missiles = player.getMissiles();
 

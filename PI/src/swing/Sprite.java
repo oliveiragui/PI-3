@@ -1,15 +1,14 @@
 package swing;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.Image;
 
 public class Sprite {
 
     protected int x;
     protected int y;
-    protected int width;
-    protected int height;
+    int width;
+    int height;
     protected boolean visible;
     protected Image image;
 
@@ -20,6 +19,9 @@ public class Sprite {
         visible = true;
     }
 
+    public Sprite() {
+    }
+
     protected void loadImage(String imageName) {
 
         ImageIcon ii = new ImageIcon(imageName);
@@ -28,8 +30,8 @@ public class Sprite {
 
     protected void getImageDimensions() {
 
-        width = image.getWidth(null);
-        height = image.getHeight(null);
+        setWidth(image.getWidth(null));
+        setHeight(image.getHeight(null));
     }
 
     public Image getImage() {
@@ -48,7 +50,15 @@ public class Sprite {
         return visible;
     }
 
-    public void setVisible(Boolean visible) {
+    public void setVisible(boolean visible) {
         this.visible = visible;
+    }
+
+    public void setWidth(int width) {
+        this.width = width;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
     }
 }

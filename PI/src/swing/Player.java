@@ -27,7 +27,7 @@ public class Player extends Sprite {
 
         missiles = new ArrayList<>();
 
-        loadImage("src/resources/spaceship.png");
+        loadImage("src/resources/link-E.png");
         getImageDimensions();
     }
 
