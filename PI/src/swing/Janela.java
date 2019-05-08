@@ -14,7 +14,7 @@ public class Janela extends JFrame {
         add(new Jogo());
 
         setTitle("Fish Miracle");
-        setSize(400, 300);
+        setSize(495, 518);
 
         setLocationRelativeTo(null);
         setResizable(false);

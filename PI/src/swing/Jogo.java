@@ -1,10 +1,8 @@
 package swing;
 
 import swing.Player;
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Toolkit;
+
+import java.awt.*;
 import java.awt.event.*;
 import java.util.List;
 import javax.swing.JPanel;
@@ -57,9 +55,11 @@ public class Jogo extends JPanel implements ActionListener {
                 player.getY(), this);
 
 
-        for (Tile tile: level.getTiles()) {
-            g2d.drawImage(tile.getImage(), tile.getX(),
-                    tile.getY(), this);
+        for (int i = 0; i < level.getTiles().length; i++) {
+            for (int j = 0; j < level.getTiles().length; j++) {
+                g2d.drawImage(level.getTiles()[i][j].getImage(), level.getTiles()[i][j].getX(),
+                        level.getTiles()[i][j].getY(), this);
+            }
         }
 
         List<Missile> missiles = player.getMissiles();
@@ -76,8 +76,10 @@ public class Jogo extends JPanel implements ActionListener {
 
         updateMissiles();
         updatePlayer();
+        checkCollisions();
+        repaint();
 
-        repaint();    }
+    }
 
     private void updateMissiles() {
 
@@ -100,6 +102,28 @@ public class Jogo extends JPanel implements ActionListener {
     private void updatePlayer() {
 
         player.move();
+    }
+
+
+
+    public void checkCollisions() {
+
+        Rectangle r3 = player.getBounds();
+
+        for (int i = 0; i < level.getTiles().length; i++) {
+            for (int j = 0; j < level.getTiles().length; j++) {
+                Rectangle r2 = level.getTiles()[i][j].getBounds();
+
+                if (r3.intersects(r2)) {
+                    //spaceship.setVisible(false);
+                    level.getTiles()[i][j].setVisible(false);
+
+                    //ingame = false;
+                }
+
+            }
+        }
+
     }
 
     private class TAdapter extends KeyAdapter {

@@ -4,7 +4,7 @@ import java.awt.*;
 
 public class Tile extends Sprite {
 
-    private int[] tilePositions;
+    //private int[] tilePositions;
 
     public Tile(int x, int y, String imageSrc) {
         super(x, y);

@@ -1,7 +1,7 @@
 package swing;
 
 import javax.swing.*;
-import java.awt.Image;
+import java.awt.*;
 
 public class Sprite {
 
@@ -11,6 +11,28 @@ public class Sprite {
     int height;
     protected boolean visible;
     protected Image image;
+
+    protected int topI = x;
+    protected int topF = x + width;
+    protected int downI = y + height;
+    protected int downF = downI + width;
+    protected int leftI = y;
+    protected int leftF = y + height;
+    protected int rightI = x + width;
+    protected int rightF = rightI + height;
+
+    protected int midTop = y + (width/2);
+
+    protected int midRight = x + width;
+
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
 
     public Sprite(int x, int y) {
 
@@ -60,5 +82,9 @@ public class Sprite {
 
     public void setHeight(int height) {
         this.height = height;
+    }
+
+    public Rectangle getBounds() {
+        return new Rectangle(x, y, width, height);
     }
 }
