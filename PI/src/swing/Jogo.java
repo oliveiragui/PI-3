@@ -10,8 +10,8 @@ import javax.swing.Timer;
 
 public class Jogo extends JPanel implements ActionListener {
 
-    private final int ICRAFT_X = 40;
-    private final int ICRAFT_Y = 60;
+    private final int ICRAFT_X = 40; // <- -> esquerda/direita
+    private final int ICRAFT_Y = 60; // ^ v cima/baixo
     private Timer timer;
     private boolean jogoAtivo; // variável de controle para game Loop
     private Player player;
@@ -102,6 +102,10 @@ public class Jogo extends JPanel implements ActionListener {
     private void updatePlayer() {
 
         player.move();
+        if (player.x > 495){
+            level = new Level(2);
+            player.x = 0;
+        }
     }
 
 
@@ -110,17 +114,41 @@ public class Jogo extends JPanel implements ActionListener {
 
         Rectangle r3 = player.getBounds();
 
+
         for (int i = 0; i < level.getTiles().length; i++) {
             for (int j = 0; j < level.getTiles().length; j++) {
                 Rectangle r2 = level.getTiles()[i][j].getBounds();
 
                 if (r3.intersects(r2)) {
-                    //spaceship.setVisible(false);
-                    level.getTiles()[i][j].setVisible(false);
-
-                    //ingame = false;
+                    if (player.isUpPressed()){
+                        System.out.println("up");
+                        player.stopDirection("up");
+                        player.setCollideTop(true);
+                        player.setY(player.y+1);
+                        player.setCollideTop(false);
+                    } else {player.setCollideTop(false);}
+                    if (player.isDownPressed()){
+                        System.out.println("down");
+                        player.stopDirection("down");
+                        player.setCollideDown(true);
+                        player.setY(player.y-1);
+                        player.setCollideDown(false);
+                    } else {player.setCollideDown(false);}
+                    if (player.isLeftPressed()){
+                        System.out.println("left");
+                        player.stopDirection("left");
+                        player.setCollideLeft(true);
+                        player.setX(player.x+1);
+                        player.setCollideLeft(false);
+                    } else {player.setCollideLeft(false);}
+                    if (player.isRightPressed()){
+                        System.out.println("right");
+                        player.stopDirection("right");
+                        player.setCollideRight(true);
+                        player.setX(player.x-1);
+                        player.setCollideRight(false);
+                    } else {player.setCollideRight(false);}
                 }
-
             }
         }
 
