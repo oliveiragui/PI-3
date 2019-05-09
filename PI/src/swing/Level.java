@@ -24,9 +24,9 @@ public class Level {
             for (int j = 0; j < tilePos.length; j++) {
                 String imageSource =
                         tilePos[i][j] == 1
-                        ? "src/resources/tileWall.png"
+                        ? "PI/src/resources/tileWall.png"
                         : tilePos[i][j] == 2
-                        ? "src/resources/tileGrass.png"
+                        ? "PI/src/resources/tileGrass.png"
                         : "";
 
                 tiles[i][j] = new Tile(j*this.pixelsMultiplier,i*this.pixelsMultiplier, imageSource);

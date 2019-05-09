@@ -17,6 +17,7 @@ public class Jogo extends JPanel implements ActionListener {
     private Player player;
     private final int DELAY = 10;
     private Level level;
+    private Enemy enemy;
 
 
     public Jogo(){
@@ -33,6 +34,8 @@ public class Jogo extends JPanel implements ActionListener {
         player = new Player(ICRAFT_X, ICRAFT_Y);
 
         level = new Level(1);
+
+        enemy = new Enemy(340, 60);
 
         timer = new Timer(DELAY, this);
         timer.start();
@@ -53,6 +56,9 @@ public class Jogo extends JPanel implements ActionListener {
 
         g2d.drawImage(player.getImage(), player.getX(),
                 player.getY(), this);
+
+        g2d.drawImage(enemy.getImage(), enemy.getX(),
+                enemy.getY(), this);
 
 
         for (int i = 0; i < level.getTiles().length; i++) {
@@ -113,6 +119,11 @@ public class Jogo extends JPanel implements ActionListener {
     public void checkCollisions() {
 
         Rectangle r3 = player.getBounds();
+        Rectangle r4 = enemy.getBounds();
+
+        if(r3.intersects(r4)){
+            enemy.setX(enemy.x + 5);
+        }
 
 
         for (int i = 0; i < level.getTiles().length; i++) {

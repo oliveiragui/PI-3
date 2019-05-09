@@ -99,7 +99,7 @@ public class Player extends Sprite {
 
         missiles = new ArrayList<>();
 
-        loadImage("src/resources/link-E.png");
+        loadImage("PI/src/resources/link-E.png");
         getImageDimensions();
     }
 
@@ -117,32 +117,34 @@ public class Player extends Sprite {
         int key = e.getKeyCode();
 
         if (key == KeyEvent.VK_SPACE) {
-            fire();
+            //fire();
+            loadImage("PI/src/resources/link-W.png");
+
         }
 
         if (key == KeyEvent.VK_LEFT && !isCollideLeft()) {
-            loadImage("src/resources/link-W.png");
+            loadImage("PI/src/resources/link-W.png");
             System.out.println("Pressed Left");
             setLeftPressed(true);
             dx = -1;
         }
 
         if (key == KeyEvent.VK_RIGHT && !isCollideRight()) {
-            loadImage("src/resources/link-E.png");
+            loadImage("PI/src/resources/link-E.png");
             System.out.println("Pressed Right");
             setRightPressed(true);
             dx = 1;
         }
 
         if (key == KeyEvent.VK_UP && !isCollideTop()) {
-            loadImage("src/resources/link-N.png");
+            loadImage("PI/src/resources/link-N.png");
             System.out.println("Pressed Up");
             setUpPressed(true);
             dy = -1;
         }
 
         if (key == KeyEvent.VK_DOWN  && !isCollideDown()) {
-            loadImage("src/resources/link-S.png");
+            loadImage("PI/src/resources/link-S.png");
             System.out.println("Pressed Down");
             setDownPressed(true);
             dy = 1;
