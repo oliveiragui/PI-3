@@ -121,27 +121,32 @@ public class Player extends Sprite {
         }
 
         if (key == KeyEvent.VK_LEFT && !isCollideLeft()) {
+            loadImage("src/resources/link-W.png");
             System.out.println("Pressed Left");
             setLeftPressed(true);
             dx = -1;
         }
 
         if (key == KeyEvent.VK_RIGHT && !isCollideRight()) {
+            loadImage("src/resources/link-E.png");
             System.out.println("Pressed Right");
             setRightPressed(true);
             dx = 1;
         }
 
         if (key == KeyEvent.VK_UP && !isCollideTop()) {
+            loadImage("src/resources/link-N.png");
             System.out.println("Pressed Up");
             setUpPressed(true);
             dy = -1;
         }
 
         if (key == KeyEvent.VK_DOWN  && !isCollideDown()) {
+            loadImage("src/resources/link-S.png");
             System.out.println("Pressed Down");
             setDownPressed(true);
             dy = 1;
+            
         }
     }
 
