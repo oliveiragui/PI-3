@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Referencia/Estrela WilliamHonda/AStar/AStar.iml" filepath="$PROJECT_DIR$/Referencia/Estrela WilliamHonda/AStar/AStar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PI-3 GuilhermeMacedo-PeterDeNardo.iml" filepath="$PROJECT_DIR$/PI-3 GuilhermeMacedo-PeterDeNardo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Referencia/Código Com IA Semi-Funcional/PI-PeterDN_GuilhermeM/src/pi/pi.iml" filepath="$PROJECT_DIR$/Referencia/Código Com IA Semi-Funcional/PI-PeterDN_GuilhermeM/src/pi/pi.iml" />
+    </modules>
+  </component>
+</project>

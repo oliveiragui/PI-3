@@ -1,0 +1,30 @@
+//TileName-SpriteX-SpriteY-CollisionType
+//If there is no CollisionType argument, that tile has no collision
+// 4: Direita 3: Baixo 2: Esquerda 1: Cima 0: Tudo
+GramaBase-8-2-2
+ArvoreCimaEsq-8-3-0
+ArvoreCimaDir-9-3-0
+ArvoreBaixoEsq-8-4-0
+ArvoreBaixoEsq-9-4-0
+Arvorinha-10-3-0
+Grade-8-5-0
+Grade2-9-5-2
+Grade3-9-6-2
+Grade4-9-7-3
+Grade5-11-0-1
+Grade6-11-1-4
+Grade7-11-2-2
+Grade8-7-0-2
+Pedra-15-1-0
+Porta-5-3-1
+PedraGelo-16-7-0
+Gelo-14-5
+GradeGelo-13-4-0
+GradeGelo2-13-5-2
+GradeGelo3-13-6-0
+GradeGelo4-15-6-3
+GradeGelo5-16-6-0
+GradeGelo6-16-5-4
+GradeGelo7-16-4-0
+GradeGelo8-15-4-1
+Agua-15-5
